@@ -28,6 +28,3 @@ def read_folder(path) :
         songs.append({"path" : file, "titulo": title})
 
     return songs
-
-
-print(read_folder("/home/zaki/Music"))
