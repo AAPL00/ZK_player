@@ -25,7 +25,7 @@ def read_folder(path) :
         else :
             titulo = os.path.splitext(os.path.basename(file))[0]
         
-        songs.append({"path" : file, "titulo": title})
+        songs.append({"path" : file, "title": title})
 
     return songs
 
@@ -35,7 +35,7 @@ def group_by(songs_list, method) :
         key = method(song)
         if key not in group :
             group[key] = []
-        group[key].append(song)
+        group[key].append(song["title"])
     return group
 
 def get_artist(song) :
