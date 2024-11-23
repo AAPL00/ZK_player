@@ -39,9 +39,13 @@ def group_by(songs_list, method) :
     return group
 
 def get_artist(song) :
-    audio = File(song["ruta"])
+    audio = File(song["path"])
     return str(audio.get("TPE1", "Desconocido"))
 
 def get_album(song) :
-    audio = File(song["ruta"])
+    audio = File(song["path"])
     return str(audio.get("TALB", "Sin Álbum"))
+
+
+hola = read_folder("/home/zaki/Music")
+print(group_by(hola, get_album))
