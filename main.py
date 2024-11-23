@@ -14,12 +14,8 @@ def read_folder(path) :
         if os.path.isfile(complete_path) and os.path.splitext(file)[1].lower() in valid_extensions:
             audio_files.append(complete_path)
 
-    return audio_files
-
-def main_list(audio_files) :
-    
     songs = []
-    
+
     for file in audio_files :
         audio = File(file)
         """el get depende del formato de archivo, pues el campo con el título de la canción cambia en dependencia del formato"""
@@ -30,5 +26,8 @@ def main_list(audio_files) :
             titulo = os.path.splitext(os.path.basename(file))[0]
         
         songs.append({"path" : file, "titulo": title})
-    
+
     return songs
+
+
+print(read_folder("/home/zaki/Music"))
