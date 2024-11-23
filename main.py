@@ -28,3 +28,11 @@ def read_folder(path) :
         songs.append({"path" : file, "titulo": title})
 
     return songs
+
+def get_artist(song) :
+    audio = File(song["ruta"])
+    return str(audio.get("TPE1", "Desconocido"))
+
+def get_album(song) :
+    audio = File(song["ruta"])
+    return str(audio.get("TALB", "Sin Álbum"))
