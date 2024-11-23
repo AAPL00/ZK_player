@@ -29,9 +29,6 @@ def main_list(audio_files) :
         else :
             titulo = os.path.splitext(os.path.basename(file))[0]
         
-        songs.append({"path" : file, "titulo": os.path.splitext(os.path.basename(file))[0]})
+        songs.append({"path" : file, "titulo": title})
     
     return songs
-
-hola = read_folder("/home/zaki/Music")
-print(main_list(hola))
