@@ -29,6 +29,15 @@ def read_folder(path) :
 
     return songs
 
+def group_by(songs_list, method) :
+    group = {}
+    for song in songs_list :
+        key = method(song)
+        if key not in group :
+            group[key] = []
+        group[key].append(song)
+    return group
+
 def get_artist(song) :
     audio = File(song["ruta"])
     return str(audio.get("TPE1", "Desconocido"))
